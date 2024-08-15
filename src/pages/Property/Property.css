@@ -51,6 +51,21 @@
      outline:none;
 }
 
+.amenities-filter{
+      display:flex;
+      gap:30px;
+      align-items: center;
+      padding:10px;
+      margin:0 auto;
+      width:80%;
+      flex-wrap:wrap;
+}
+
+.amenities-filter div{
+      display: flex;
+      align-items: center;
+      gap:10px;
+}
 @media(max-width:830px){
 
       .cards{
@@ -64,6 +79,18 @@
       
       }
 
+      .amenities-filter{
+           
+            gap:20px;
+            align-items: center;
+            padding:10px;
+            margin:0 auto;
+            width:80%;
+            font-size:12px;
+      }
+      
+      
+
 }
 
 @media (max-width:690px){
@@ -72,6 +99,21 @@
             row-gap:20px;
             column-gap:10px;
             
+      }
+
+      .amenities-filter{
+            display:flex;
+            gap:10px;
+            align-items: center;
+            padding:10px;
+            margin:0 auto;
+            width:90%;
+      }
+      
+      .amenities-filter div{
+            display: flex;
+            align-items: center;
+            gap:5px;
       }
 
 

@@ -62,7 +62,7 @@ const Product = () => {
              <p>{value.location}</p>
              <div className='amenities'>{value.amenities.map((value,idx)=>{return <div key={idx}>{`${value} `}</div>})}
              <p></p></div>
-             <button className='addtocart' onClick={addCart(value.id-1)}>ADD TO CART</button>
+             <button className='addtocart' onClick={()=>{addCart(value.id-1);alert("Added to cart")}}>ADD TO CART</button>
 
 
       </div>
