@@ -1,0 +1,28 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Mitr:wght@200;300;400;500;600;700&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+
+
+*{
+      margin:0;
+      padding:0;
+      box-sizing: border-box;
+      font-family:sans-serif;
+      overflow-x:hidden;
+}
+
+button{
+      border-radius: 20px;
+	border: 1px solid #FF4B2B;
+	background-color: #FF4B2B;
+	color: #FFFFFF;
+	font-size: 12px;
+	font-weight: bold;
+	padding: 7px 14px;
+	letter-spacing: 1px;
+	text-transform: uppercase;
+	transition: transform 80ms ease-in;
+	cursor:pointer;
+}
+button:active{
+      transform:scale(.95);
+}

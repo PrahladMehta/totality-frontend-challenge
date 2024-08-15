@@ -1,0 +1,36 @@
+.signup{
+
+     
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      margin-top:50px;
+      align-items: center;
+      gap:30px;
+
+
+}
+
+.auth-container{
+
+      /* height:90vh; */
+      width:100vw;
+
+
+}
+
+.auth-form{
+      
+      padding:30px;
+      display:flex;
+      position:static;
+      align-items: center;
+      justify-content:center;
+
+      width:400px;
+      gap:30px;
+      
+
+
+}

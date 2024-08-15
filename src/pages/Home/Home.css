@@ -1,0 +1,101 @@
+.home-wrapper{
+       
+}
+
+.home-container{
+      width:100%;
+      background-image:url("https://www.houzillo.com/wp-content/uploads/2019/11/img-02-5.jpg");
+       height:700px;
+       background-position: center;
+       background-repeat:no-repeat;
+       display:flex;
+       align-items: center;
+       flex-direction: column;
+      text-align: center;
+      text-transform: uppercase;
+      color:white;
+}
+
+.home-container-text{
+      width:80%;
+      margin-top:110px;
+      overflow: hidden;
+}
+
+.home-container-text h1{
+      margin-bottom:20px;
+      font-size:45px;
+      font-family: "Mitr", sans-serif;
+
+      animation:textanimehead .5s ease-in;
+      font-weight: 500;
+
+}
+
+.home-container-text p{
+color:#353543;
+font-size: 20px;
+font-weight:600;
+animation:textanimepara .5s ease-in;
+}
+
+@keyframes textanimehead {
+
+      0%{
+            transform:translateY(-100%);
+
+      }100%{
+            transform:scale(1);
+      }
+      
+}
+
+@keyframes textanimepara {
+
+      0%{
+            transform:translateY(100%);
+
+      }100%{
+            transform:translateY(0);
+      }
+      
+}
+
+.recomndation{
+
+      width:90%;
+      text-align: center;
+      padding:30px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap:10px;
+      margin:30px auto;
+
+}
+
+.recomndation-para{
+      margin-top:20px;
+}
+
+.underline{
+      width:30px;
+      height:5px;
+      background-color: #f7395a;
+      border-radius: 3px;
+      margin:0 auto;
+
+}
+
+@media (max-width:500px) {
+
+      .home-container h1{
+            font-size:25px;
+      }
+      
+
+      .home-container p{
+            font-size: 16px;
+      }
+}
