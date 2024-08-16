@@ -44,10 +44,10 @@ function App() {
 <div className='logo'>BOOKING </div>
 
 <ul className={`nav-bar ${activenav&&"activenav"}`}>
- <li onClick={()=>setActivenav(!activenav)}><NavLink to="/" className="nav-bar-opt"><p>HOME</p><div className='nav-bar-opt-bottom'></div></NavLink> </li>
- <li onClick={()=>setActivenav(!activenav)}><NavLink to="/property" className="nav-bar-opt"><p>PROPERTY</p><div className='nav-bar-opt-bottom'></div></NavLink> </li>
- <li onClick={()=>setActivenav(!activenav)}><NavLink to="/cart" className="nav-bar-opt"><p>CART</p><div className='nav-bar-opt-bottom'></div></NavLink> </li>
- <li onClick={()=>setActivenav(!activenav)}><NavLink to="/yourbooking" className="nav-bar-opt">  <p>YOUR BOOKING</p><div className='nav-bar-opt-bottom'></div></NavLink></li>
+ <li onClick={()=>setActivenav(false)}><NavLink to="/" className="nav-bar-opt"><p>HOME</p><div className='nav-bar-opt-bottom'></div></NavLink> </li>
+ <li onClick={()=>setActivenav(false)}><NavLink to="/property" className="nav-bar-opt"><p>PROPERTY</p><div className='nav-bar-opt-bottom'></div></NavLink> </li>
+ <li onClick={()=>setActivenav(false)}><NavLink to="/cart" className="nav-bar-opt"><p>CART</p><div className='nav-bar-opt-bottom'></div></NavLink> </li>
+ <li onClick={()=>setActivenav(false)}><NavLink to="/yourbooking" className="nav-bar-opt">  <p>YOUR BOOKING</p><div className='nav-bar-opt-bottom'></div></NavLink></li>
 
 </ul>
 

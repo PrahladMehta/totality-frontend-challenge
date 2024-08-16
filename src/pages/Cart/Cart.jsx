@@ -31,7 +31,7 @@ const Cart = () => {
 
             addBooking(formdata);
 
-            console.log(formdata);  
+             alert("Booked"); 
             
             
 
