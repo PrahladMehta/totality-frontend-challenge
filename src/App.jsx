@@ -22,7 +22,7 @@ function App() {
 
      const[activenav,setActivenav]=useState(false);
 
-     console.log(data);
+ 
 
      useEffect(()=>{
       getData();

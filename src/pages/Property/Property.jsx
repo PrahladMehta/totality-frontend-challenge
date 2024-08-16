@@ -1,19 +1,22 @@
-import React,{useState} from 'react'
+import React,{useEffect, useState} from 'react'
 import Card from '../../components/Card'
 import { Context } from '../../context/Context';
 import { useContext } from 'react';
 import "./Property.css";
 import { FaSearch } from "react-icons/fa";
+
 const Property = () => {
 
          const {data}=useContext(Context);
-         console.log(data);
 
 
+        const[numberofbedroom,setNumberofbedroom]=useState([]);
 
          const[filter,setFilter]=useState(data);
 
          const[checked,setChecked]=useState([]);
+
+         
 
          function handleSearch(e){
 
@@ -35,34 +38,82 @@ const Property = () => {
              handleSecondFilter();
          }
 
+         function handleChangetwo(e){
+            if(e.target.checked){
+         numberofbedroom.push(parseInt(e.target.value));
+         setFilter(data);
+            }else{
+                 numberofbedroom.splice(numberofbedroom.indexOf(parseInt(e.target.value)),1);
+                 setFilter(data);
+                
+            }
+           
+          
+            handleSecondFilter();
+        }
+
          function handleSecondFilter(){
+
+                console.log(filter);
                
-                   if(checked.length===0){
+                   if(checked.length!==0){
                         
-                        return;
-                   }
-                 const datafil=data.filter((item,id)=>{
-
-                     console.log(checked);
-                     console.log(item.amenities);
-                     
-                         for(let i=0;i<checked.length;i++){
-                              let contain=false;
-                              for(let j=0;j<item.amenities.length;j++){
-                                    console.log(item.amenities[j]);
-                                    if(item.amenities[j].toLowerCase().includes(checked[i].toLowerCase())){
-                                         contain=true;
-
+                        const datafil=data.filter((item,id)=>{
+                              for(let i=0;i<checked.length;i++){
+                                    let contain=false;
+                                    for(let j=0;j<item.amenities.length;j++){
+                                      
+                                          if(item.amenities[j].toLowerCase().includes(checked[i].toLowerCase())){
+                                               contain=true;
+      
+                                          }
+                                          
                                     }
-                                    
-                              }
+      
+                                    if(!contain) return false;
+                               }
 
-                              if(!contain) return false;
-                         }
-                         return true;
-                 })
 
-                 setFilter(datafil);
+                               return true;
+                              
+                           }
+
+                          
+                           
+                             
+                       )
+                       setFilter(datafil);
+                   }
+
+                 
+
+                   if(numberofbedroom.length!==0){
+                         
+                        // console.log(numberofbedroom);
+                        // console.log(numberofbedroom.indexOf(4));
+                        console.log(filter);
+                          const datafiltwo=filter.filter((item,id)=>{
+                              // console.log(numberofbedroom.indexOf(item.bedrooms));
+                               if(numberofbedroom.indexOf(item.bedrooms)!==-1){
+                                   
+                                    // console.log(item.bedrooms);
+                                          return true;
+                               }
+                                return false;
+                          })
+
+                        //   console.log(datafiltwo);
+
+                          setFilter(datafiltwo);
+                   }
+
+
+
+                  
+                   
+              
+
+                
          }
   return (
     <div className='property-container'>
@@ -123,6 +174,42 @@ const Property = () => {
                  
 
              </div>
+
+             <div className='amenities-filter'>
+
+<p>Bedrooms :</p>
+
+  <div>
+  <label htmlFor="one">one </label>
+  <input type="checkbox" id='wifi' value="1" name='bedroom' onChange={(e)=>handleChangetwo(e)} />
+  </div>
+  <div>
+  <label htmlFor="two">two</label>
+  <input type="checkbox" id='gym' value="2"  name='bedroom' onChange={(e)=>handleChangetwo(e)}  />
+  </div>
+  <div>
+  <label htmlFor="three">three</label>
+  <input type="checkbox" id="three"   value="3" name='bedroom' onChange={(e)=>handleChangetwo(e)} />
+  </div>
+  <div>
+    
+  <label htmlFor="four">
+    Four</label>
+    <input type="checkbox" id='four' value="4"  name='bedroom' onChange={(e)=>handleChangetwo(e)}  />
+  </div>
+  <div>
+    
+  <label htmlFor="five">
+    Five</label>
+    <input type="checkbox" id='five' value="5"  name='bedroom' onChange={(e)=>handleChangetwo(e)}  />
+  </div>
+
+
+
+
+   
+
+</div>
              
           </div>
       </div>
