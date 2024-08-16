@@ -34,6 +34,7 @@ const Property = () => {
              }else{
                   checked.splice(checked.indexOf(e.target.value),1);
                   setFilter(data);
+              
              }
              handleSecondFilter();
          }
@@ -41,24 +42,24 @@ const Property = () => {
          function handleChangetwo(e){
             if(e.target.checked){
          numberofbedroom.push(parseInt(e.target.value));
-         setFilter(data);
+        
             }else{
                  numberofbedroom.splice(numberofbedroom.indexOf(parseInt(e.target.value)),1);
-                 setFilter(data);
                 
+                  setFilter(data);
             }
-           
+         
           
             handleSecondFilter();
         }
 
          function handleSecondFilter(){
 
-                console.log(filter);
+                 let datafil=[];
                
                    if(checked.length!==0){
                         
-                        const datafil=data.filter((item,id)=>{
+                         datafil=data.filter((item,id)=>{
                               for(let i=0;i<checked.length;i++){
                                     let contain=false;
                                     for(let j=0;j<item.amenities.length;j++){
@@ -82,17 +83,21 @@ const Property = () => {
                            
                              
                        )
-                       setFilter(datafil);
+                  //      setFilter(datafil);
                    }
 
-                 
+                   if(datafil.length===0){
+                        datafil=data;
+                   }
+
+                  let datafiltwo=[];
 
                    if(numberofbedroom.length!==0){
                          
                         // console.log(numberofbedroom);
                         // console.log(numberofbedroom.indexOf(4));
                         console.log(filter);
-                          const datafiltwo=filter.filter((item,id)=>{
+                          datafiltwo=datafil.filter((item,id)=>{
                               // console.log(numberofbedroom.indexOf(item.bedrooms));
                                if(numberofbedroom.indexOf(item.bedrooms)!==-1){
                                    
@@ -104,8 +109,16 @@ const Property = () => {
 
                         //   console.log(datafiltwo);
 
-                          setFilter(datafiltwo);
+                     
                    }
+
+                   if(datafiltwo.length!==0){
+                        setFilter(datafiltwo);
+                   }else{
+                        setFilter(datafil);
+                   }
+
+                  
 
 
 
